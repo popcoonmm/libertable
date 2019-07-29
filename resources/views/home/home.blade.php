@@ -10,7 +10,7 @@
     <link href="{{ secure_asset('css/home.css') }}" rel="stylesheet">
   </head>
   <body>
-    <img src="storage/image/storn.jpg" class="bg">
+   
     <header>
       <div class="container">
         <div class="bg"></div>

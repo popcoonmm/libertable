@@ -1,24 +1,23 @@
-@extends('layouts.app')
-    <header>
+@extends('layouts.admin')
+@section('title', 'MENU')
+@section('content')
+  <header>
       <div class="container">
           <h1 class="header-top">MENU</h1>
-         <div class="header">
            <a href='reserves/index' class="reservation">予約リストへ</a>
            <a href='/' class="top">トップへ</a>
-          </div>
-        </div>
       </div>
-    </header>
-      <div class="menu-ground">
-          @foreach($menus as $menu)
-          <div class="container menu">
-            <div class="row">
-              <div class="col-12 col-sm-6 col-md-4 border bg-primary">
-          <div class="menu-image">
-           @if ($menu->image_path)
+  </header>
+              
+<div class="container-fluid">
+@foreach($menus as $menu)
+	<div class="row">
+		<div class="col-md-12">
+           <div class="menu-image">
+@if ($menu->image_path)
             <img src="{{ secure_asset('storage/image/' . $menu->image_path) }}"class="aligncenter" style="width:100%;" />
-           @endif
-          </div> 
+@endif
+           </div> 
                     <div class="date">
                     {{ $menu->updated_at->format('Y年m月d日') }}
                     </div>
@@ -49,30 +48,30 @@
                    <input type="hidden" name="menu_id" value="{{$menu->id}}">
                     <input type="submit"class="btn-secondary" value="予約リストへ">
                   </form>
-                </div>
-            </div>
-          @endforeach
-      </div>
-  <footer>
-    <div class="container">
-      <div class_="row">
-          <a href='reserves/index' class="reservation">予約リストへ</a>
-           <a href='/' class="top">トップへ</a>
-                 <p> ---------------------------------- </p>
-
-      <div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Map</h5>
-         <iframe src="https://maps.google.co.jp/maps?output=embed&q=渋谷駅"></iframe>
-          <span aria-hidden="true">&times;</span>
-        </button>
-                </div>
+        </div>
+    </div>
+@endforeach
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#map">
+  Launch demo modal
+</button>
+	<div class="row">
+		<div class="col-md-12">
+          <footer>	    
+        	<div class="modal" tabindex="-1" role="dialog" id="map">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Map</h5>
+                    <iframe src="https://maps.google.co.jp/maps?output=embed&q=渋谷駅"></iframe>
+                     <span aria-hidden="true">&times;</span>
+                
+                  </div>
+                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>     
-    </footer>
- @section('content')
+          </footer>
+         </div>
+    </div>
+</div>
+
+@endsection

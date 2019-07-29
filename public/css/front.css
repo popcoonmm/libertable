@@ -17,8 +17,11 @@ body {
 
 .menu-image {
   width: 25%;
-  height: 25%;
   display: inline-block;
+}
+
+.menu-image img {
+  width: 100%;
 }
 
 .container {

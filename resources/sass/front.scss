@@ -24,10 +24,11 @@ body {
 }
 .menu-image {
   width: 25%;
-  height: 25%;
   display: inline-block;
  
-  
+  img {
+    width: 100%;
+  }
  
 }
 

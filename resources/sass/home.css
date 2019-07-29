@@ -21,7 +21,7 @@ a {
 
 .top-wrapper {
   padding: 180px 0 100px 0;
-  background-image: url(../strage/app/public/image/rouge.jpeg);
+  background-image: url('../storage/image/storn.jpg');
   background-size: cover;
   color: black;
   text-align: center;
