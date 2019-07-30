@@ -1,16 +1,6 @@
 body {
   text-align:center;
 }
-// header {
-//   font-size: 25px;
-//   height: 65px;
-//   width: 100%;
-//   background-color: rgba(34, 49, 52, 0.5);
-//   position :fixed;
-//   top: 0;
-//   z-index: 10;
-
-// }
 .header-top {
   font-family: Pacifico, sans-serif;
   font-weight: bold;
@@ -23,8 +13,9 @@ body {
  
 }
 .menu-image {
-  width: 25%;
+  width: 75%;
   display: inline-block;
+  margin: auto;
  
   img {
     width: 100%;
@@ -32,13 +23,6 @@ body {
  
 }
 
-.container {
-  width: 1170px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
 
   
  /* モーダルCSS */

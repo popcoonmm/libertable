@@ -16,20 +16,13 @@ body {
 }
 
 .menu-image {
-  width: 25%;
+  width: 75%;
   display: inline-block;
+  margin: auto;
 }
 
 .menu-image img {
   width: 100%;
-}
-
-.container {
-  width: 1170px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 /* モーダルCSS */

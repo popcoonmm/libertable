@@ -1,26 +1,28 @@
-@extends('layouts.admin')
-@section('title', 'MENU')
+@extends('layouts.house')
+@section('title', 'MENU HOUSE1')
 @section('content')
   <header>
       <div class="container">
-          <h1 class="header-top">MENU</h1>
-           <a href='reserves/index' class="reservation">予約リストへ</a>
-           <a href='/' class="top">トップへ</a>
+           <a href='/' class="home">CAKE HOUSE</a>
+           <a href='house1' class="house1">トップへ</a>
       </div>
-  </header>
               
-<div class="container-fluid">
-@foreach($menus as $menu)
+<div class="container-fluid col-md-6 mx-auto col-10">
+  <h1 class="header-top">MENU</h1>
+     <a href='reserves/index' class="reservation">予約リストへ</a>
+  </header>
+  
 	<div class="row">
-		<div class="col-md-12">
+@foreach($menus as $menu)
+		<div class="col-md-4">
            <div class="menu-image">
 @if ($menu->image_path)
             <img src="{{ secure_asset('storage/image/' . $menu->image_path) }}"class="aligncenter" style="width:100%;" />
 @endif
            </div> 
-                    <div class="date">
-                    {{ $menu->updated_at->format('Y年m月d日') }}
-                    </div>
+                    <!--<div class="date">-->
+                    <!--{{ $menu->updated_at->format('Y年m月d日') }}-->
+                    <!--</div>-->
                     <div class="item">
                     {{ str_limit($menu->item, 150) }}
                     </div>
@@ -49,29 +51,32 @@
                     <input type="submit"class="btn-secondary" value="予約リストへ">
                   </form>
         </div>
-    </div>
 @endforeach
+
+    </div>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#map">
-  Launch demo modal
+  Mapを表示
 </button>
 	<div class="row">
 		<div class="col-md-12">
-          <footer>	    
-        	<div class="modal" tabindex="-1" role="dialog" id="map">
+        	<div class="modal" tabindex="-8" role="dialog" id="map">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Map</h5>
                     <iframe src="https://maps.google.co.jp/maps?output=embed&q=渋谷駅"></iframe>
-                     <span aria-hidden="true">&times;</span>
-                
-                  </div>
                  </div>
               </div>
             </div>
-          </footer>
          </div>
     </div>
+        <footer>
+    	    <div class="row">
+		        <div class="col-md-12">
+		          <a href='reserves/index' class="reservation">予約リストへ</a>
+              <a href='house1' class="house1">トップへ</a>
+              <a href='/' class="home">Cake Tree House</a>
+		        </div>
+		      </div>
+	     </footer>
 </div>
 
 @endsection

@@ -7,6 +7,7 @@
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
       <title>予約の編集</title>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   </head>   
    <body>
      <header>
@@ -47,13 +48,12 @@
                                     <td>
                                        <select name="quantity">
                           <option value="0">選択してください</option>
-                          
-                     
-                                   <!-- {{ Form::select("quantity",-->
-                                   <!--range(0,10),-->
-                                   <!--$reserve->quantity-->
-                                   <!-- ) }}-->
-                                   <!--  <td>{{ $reserve->menu->description }}</td>-->
+                           <?php
+                                 for ($i = 1; $i <= 10; $i++){
+                                 echo "<option value='{$i}'>{$i}</option>";
+                                 }
+                                 ?>
+                    
                                     <td><img src="{{ asset('storage/image/'.$reserve->menu->image_path) }}" width="50" height="50"></td>
                                       </select>
                              <td>
@@ -74,6 +74,13 @@
                     
                   
                 </form>
+                <script type="text/javascript" >
+                    $(function(){
+                       $("select[name='quantity'] option[value='{{ $reserve->quantity }}']").attr("selected","selected");
+                       
+                    });
+                    
+                </script>
                </div>
             </div>
          </div>
