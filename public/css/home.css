@@ -2,7 +2,7 @@
 
 html,
 body {
-  margin: 0;
+  margin: auto;
   /* 余白の削除 */
   padding: 0;
   /* 余白の削除 */
@@ -52,5 +52,9 @@ a {
 
 .btn-secondary {
   border-radius: 5px;
+}
+
+.btn-primary {
+  margin: 100px;
 }
 

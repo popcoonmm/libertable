@@ -59,24 +59,13 @@
 </button>
 	<div class="row">
 		<div class="col-md-12">
-        	<div class="modal" tabindex="-8" role="dialog" id="map">
-              <div class="modal-dialog" role="document">
+        	<div class="modal fade" tabindex="-1" role="dialog" id="map" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <iframe src="https://maps.google.co.jp/maps?output=embed&q=渋谷駅"></iframe>
                  </div>
               </div>
             </div>
          </div>
-    </div>
-        <footer>
-    	    <div class="row">
-		        <div class="col-md-12">
-		          <a href='reserves/index' class="reservation">予約リストへ</a>
-              <a href='house1' class="house1">トップへ</a>
-              <a href='/' class="home">Cake Tree House</a>
-		        </div>
-		      </div>
-	     </footer>
-</div>
-
+   
 @endsection
