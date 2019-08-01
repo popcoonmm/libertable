@@ -63,7 +63,7 @@
                                       <span>{{ $menu->allergies() }}</span>
                                     </td>
                                     <td>{{ str_limit($menu->description, 20) }}</td>
-                                    <td><img src="{{ asset('storage/image/'.$menu->image_path) }}" width="50" height="50"></td>
+                                    <td><img src="{{ $menu->image_path }}" width="50" height="50"></td>
                                     
                          <td>
                             <div>

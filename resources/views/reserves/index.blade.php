@@ -42,7 +42,7 @@
                                     <td>{{ $reserve->menu->price * $reserve->quantity  }}円</td>
                                     <td>{{ $reserve->quantity }}</td>
                                 <td>{{ str_limit($reserve->menu->description, 20) }}</td>
-                                    <td><img src="{{ asset('storage/image/'.$reserve->menu->image_path) }}" width="50" height="50"></td>
+                                    <td><img src="{{ $reserve->menu->image_path }}" width="50" height="50"></td>
                                     
                          <td>
                             <div>

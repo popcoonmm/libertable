@@ -54,7 +54,7 @@
                                  }
                                  ?>
                     
-                                    <td><img src="{{ asset('storage/image/'.$reserve->menu->image_path) }}" width="50" height="50"></td>
+                                    <td><img src="{{ $reserve->menu->image_path }}" width="50" height="50"></td>
                                       </select>
                              <td>
                               

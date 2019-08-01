@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Menu;
+use Storage;
 
 class MenuController extends Controller
 {
@@ -23,8 +24,8 @@ class MenuController extends Controller
 
       // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
       if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $menu->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $menu->image_path = Storage::disk('s3')->url($path);
       } else {
           $menu->image_path = null;
       }
@@ -64,14 +65,15 @@ class MenuController extends Controller
     $menu = Menu::find($request->id);
     $menu_form = $request->all();
     if (isset($menu_form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $menu->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $menu->image_path = Storage::disk('s3')->url($path);
         unset($menu_form['image']);
       } elseif (isset($request->remove)) {
         $menu->image_path = null;
         unset($menu_form['remove']);
     unset($menu_form['_token']);
       }
+      
     // $menu->fill($menu_form);
     // $menu->save();
     $menu->fill($menu_form)->save();

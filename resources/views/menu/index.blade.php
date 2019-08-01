@@ -17,7 +17,7 @@
 		<div class="col-md-4">
            <div class="menu-image">
 @if ($menu->image_path)
-            <img src="{{ secure_asset('storage/image/' . $menu->image_path) }}"class="aligncenter" style="width:100%;" />
+            <img src="{{ $menu->image_path }}"class="aligncenter" style="width:100%;" />
 @endif
            </div> 
                     <!--<div class="date">-->

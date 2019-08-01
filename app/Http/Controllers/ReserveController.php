@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Reserve;
+use Storage;
 class ReserveController extends Controller
 {
      public function index()
