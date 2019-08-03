@@ -1,33 +1,24 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
-      <title>予約一覧</title>
-  </head>
-   <body>
-     <header>
-       <div class="container">
-        <div class="row">
-          <h1 class="header-top">Reservation</h1>
-          　<div class="col-md-4">
-                <a href='/' role="button" class="btn-outline-dark";>MENU</a>
-        　　</div>
-           <!--<a href='reserves/index' class="reservation">予約リストへ</a>-->
-        </div>
-     </header>
+@extends('layouts.house')
+@section('title', '予約一覧')
+@section('content')
+       <header>
+      <div class="container">
+           <a href='/' class="home">CAKE HOUSE</a>
+           <a href='/house1' class="house1">トップへ</a>
+      </div>
+              
+<div class="container-fluid col-md-6 mx-auto col-10">
+  <h1 class="header-top" >Reservation</h1>
+  </header>
          <div class="container">
                 <div class="row">
                     <table class="table table-outline-secondary">
                         <thead>
                            <tr>
-                                <th width="5%">ID</th>
                                 <th width="15%">商品名</th>
-                                <th width="15%">値段</th>
-                                <th width="20%">注文数</th>
+                                <th width="15%">単価</th>
+                                <th width="15%">注文数</th>
+                                <th width="15%">小計</th>
                                 <th width="15%">商品詳細</th>
                                 <th width="10%">商品画像</th>
                                 <th eidth="20%">編集</th>
@@ -37,10 +28,10 @@
       <!--左が全てのデータ(複数系)からひとつ（単数形）だけ取り出す-->
        @foreach($reserves as $reserve)
                         <tr>
-                     <th>{{ $reserve->menu_id }}</th>
                                     <td>{{ $reserve->menu->item }}</td>
-                                    <td>{{ $reserve->menu->price * $reserve->quantity  }}円</td>
+                                     <td>{{ $reserve->menu->price }}円</td>
                                     <td>{{ $reserve->quantity }}</td>
+                                    <td>{{ $reserve->menu->price * $reserve->quantity  }}円</td>
                                 <td>{{ str_limit($reserve->menu->description, 20) }}</td>
                                     <td><img src="{{ $reserve->menu->image_path }}" width="50" height="50"></td>
                                     
@@ -57,8 +48,14 @@
           @endforeach
           </tbody>
           </table>
+          <div class="container-fluid col-md-6 mx-auto col-10">
+                  
+           <input type="hidden" name="menu_id" value="{{ $reserve->menu->id }}">
+                   
+                    <input type="submit"class="btn-secondary" value="予約する">
+                      
+          </div>
           </div>
           </div>
       </div>
-   </body>
-</html>
+@endsection

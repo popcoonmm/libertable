@@ -4,11 +4,11 @@
   <header>
       <div class="container">
            <a href='/' class="home">CAKE HOUSE</a>
-           <a href='house1' class="house1">トップへ</a>
+           <a href='/house1' class="house1">トップへ</a>
       </div>
               
 <div class="container-fluid col-md-6 mx-auto col-10">
-  <h1 class="header-top">MENU</h1>
+  <h1 class="header-top" >MENU</h1>
      <a href='reserves/index' class="reservation">予約リストへ</a>
   </header>
   
@@ -20,9 +20,6 @@
             <img src="{{ $menu->image_path }}"class="aligncenter" style="width:100%;" />
 @endif
            </div> 
-                    <!--<div class="date">-->
-                    <!--{{ $menu->updated_at->format('Y年m月d日') }}-->
-                    <!--</div>-->
                     <div class="item">
                     {{ str_limit($menu->item, 150) }}
                     </div>
@@ -30,7 +27,7 @@
                         <td>{{ str_limit($menu->price, 150) }}円</td>
                     </div>
                     <div class="allergy">
-                        {{ str_limit($menu->allergy, 150) }}
+                        {{ str_limit($menu->allergies(), 150) }}
                     </div>
                     <div class="description mt-3">
                         {{ str_limit($menu->description, 300) }}
@@ -52,7 +49,7 @@
                   </form>
         </div>
 @endforeach
-
+       </div>
     </div>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#map">
   Mapを表示

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
-      <title>メニューの新規作製</title>
-  </head>   
-   <body>
+@extends('layouts.house')
+@section('title', 'メニューの新規作成')
+@section('content')
      <div id ="app">
        <div class="cotainer">
          <div class="row">
@@ -25,20 +17,20 @@
                     
                      <div class="form-group row">
                         <lable class="col-md-2" for="item">商品名</lable>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <input type="text" class="form-control" name="item" value="{{ old('item') }}">
                         </div>
                     </div>
                         <div class="form-group row">
                         <lable class="col-md-2" for="price">値段</lable>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <input type="number" class="form-control" name="price" value="{{ old('price') }}">
                         </div>
                     </div>
                     
                      <div class="form-group row">
                         <lable class="col-md-2" for="allergy">アレルギー</lable>
-                        <div class="col-md-10">
+                        <div class="col-md-4">
                             <input type="checkbox" name="allergy_egg" value="鶏卵" id="allergy_egg"><label for="allergy_egg">鶏卵</label>
                             <input type="checkbox" name="allergy_milk" value="乳" id="allergy_milk"><label for="allergy_milk">乳</label>
                             <input type="checkbox" name="allergy_wheat" value="小麦" id="allergy_wheat"><label for="allergy_wheat">小麦</label>
@@ -49,7 +41,7 @@
                     
                     <div class="form-group row">
                         <lable class="col-md-2" for="description">商品説明</lable>
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <input type="text" class="form-control" name="description" value="{{ old('description') }}">
                         </div>
                     </div>
@@ -72,5 +64,4 @@
           </div>
         </div>
       </div>
-   </body>
-</html>
+@endsection

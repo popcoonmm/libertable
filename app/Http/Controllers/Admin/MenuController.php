@@ -12,7 +12,7 @@ class MenuController extends Controller
     public function add()
     {
       
-        return view('admin.menu.create');
+        return view('admin/menu/create');
     }
     public function create(Request $request)
   {
@@ -85,6 +85,6 @@ class MenuController extends Controller
       $menu = Menu::find($request->id);
       // 削除する
       $menu->delete();
-      return redirect('admin/menu/');
+      return redirect('admin/menu');
   }  
 }

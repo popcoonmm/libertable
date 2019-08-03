@@ -1,34 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
-      <title>予約の編集</title>
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  </head>   
-   <body>
-     <header>
-       <div class="cotainer">
-         <div class="row">
-            <div class="col-md-8 mx-auto">
-             <h1>Reservation</h1>
-             </div>
-          </div>
-     </header>
-    <div class="container">
-        <div class="row">
-           
-                <h2>予約の編集</h2>
-               
+@extends('layouts.house')
+@section('title', '予約の変更')
+@section('content')
+  <header>
+      <div class="container">
+           <a href='/' class="home">CAKE HOUSE</a>
+           <a href='/house1' class="house1">トップへ</a>
+      </div>
+              
+<div class="container-fluid col-md-6 mx-auto col-10">
+  <h1 class="header-top" >Change of reservation</h1>
+     <a href='/reserves/index' class="reservation">予約リストへ</a>
+  </header>
+  
             <div class="container">
                 <div class="row">
                     <table class="table table-outline-secondary">
                         <thead>
                             <tr>
-                                <th width="5%">ID</th>
                                 <th width="15%">商品名</th>
                                 <th width="15%">値段</th>
                                 <th width="20%">注文数</th>
@@ -41,7 +29,6 @@
                              
                           <form action="{{ action('ReserveController@update',['id' =>$reserve->id]) }}" method="post" enctype="multipart/form-data">   
                            <tr>
-                                    <td>{{ $reserve->id }}</td>
                                    <td>{{ $reserve->menu->item }}</td>
                                     <td>{{ $reserve->menu->price * $reserve->quantity  }}円</td>
                                    
@@ -53,7 +40,7 @@
                                  echo "<option value='{$i}'>{$i}</option>";
                                  }
                                  ?>
-                    
+                    <td>{{ str_limit($reserve->menu->description, 20) }}</td>
                                     <td><img src="{{ $reserve->menu->image_path }}" width="50" height="50"></td>
                                       </select>
                              <td>
@@ -85,5 +72,4 @@
             </div>
          </div>
      </div>
-  </body>
-</html>
+@endsection
