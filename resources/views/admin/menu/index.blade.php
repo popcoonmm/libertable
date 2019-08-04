@@ -1,11 +1,11 @@
 @extends('layouts.house')
-@section('title','メニューの編集')
+@section('title','メニュー一覧')
 @section('content')
-<header>
-    <div class="container">
-        <a href='menu/create' class="home">NEW MENU</a>
-    </div>
-</header>
+ <div id ="app">
+       <div class="cotainer">
+         <div class="row">
+            <div class="col-md-8 mx-auto">
+             <h1>Newmenu</h1>
       <div class="container">
         <div class="row">
           <p>商品検索</p>
@@ -38,7 +38,7 @@
                     <tr>
                                 <th>{{ $menu->id }}</th>
                                 <td>{{ str_limit($menu->item, 10) }}</td>
-                                <td>{{ str_limit($menu->price, 10) }}</td>
+                                <td>{{ str_limit($menu->price, 10) }}円</td>
                                 <td> <span>{{ $menu->allergies() }}</span></td>
                                 <td>{{ str_limit($menu->description, 20) }}</td>
                                 <td><img src="{{ $menu->image_path }}" width="50" height="50"></td>
@@ -54,7 +54,11 @@
 @endforeach
                      </tbody>
                  </table>
+               </div>
              </div>
-         </div>
-    </div>
+          </div>
+       </div>
+     </div>
+   </div>
+</div>
 @endsection

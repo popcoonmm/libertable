@@ -46,7 +46,11 @@ class MenuController extends Controller
    public function index(Request $request)
   {
       $cond_item = $request->cond_item;
-      $menu = Menu::menu_search($cond_item);
+      if (isset($cond_item)){
+        $menu = Menu::menu_search($cond_item);
+      }else{
+        $menu=Menu::all();
+      }
 
       return view('admin.menu.index', ['menu' => $menu, 'cond_item' => $cond_item]);
   }
@@ -87,4 +91,10 @@ class MenuController extends Controller
       $menu->delete();
       return redirect('admin/menu');
   }  
+  
+  
+   public function __construct()
+    {
+        $this->middleware('auth:admin');  //変更
+    }
 }

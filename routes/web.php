@@ -10,32 +10,42 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::get('/', 'MenuController@home');
+Route::get('menu', 'Admin\MenuController@index');
+Route::get('house1', 'MenuController@index');
+Route::get('home', 'MenuController@index');
 
 
-Route::group(['prefix' => 'admin','middleware'=>'auth'], function() {
+Route::group(['prefix' => 'admin','middleware'=>'auth:admin'], function() {
     Route::get('menu/create','Admin\MenuController@add');
     Route::get('menu/create', 'Admin\MenuController@add');
     Route::post('menu/create', 'Admin\MenuController@create');
-    Route::get('menu/edit', 'Admin\MenuController@edit'); // 追記
+    Route::get('menu/edit', 'Admin\MenuController@edit');
     Route::post('menu/edit', 'Admin\MenuController@update');
     Route::get('menu/delete','Admin\MenuController@delete');
     Route::get('menu', 'Admin\MenuController@index');
-  
-    // Route::get('carts', 'CartController@index');
-     
-   
+    Route::post('logout',   'Admin\LoginController@logout')->name('admin.logout');
+    // Route::get('home',      'Admin\MenuController@indexx')->name('admin.menu');
 });
- Route::get('menu', 'Admin\MenuController@index');
-Route::get('/', 'MenuController@home');
-Route::get('house1', 'MenuController@index');
-Route::get('home', 'MenuController@index');
-Route::get('reserves/index','ReserveController@index');
-Route::post('reserves/create','ReserveController@create');
-Route::get('reserves/edit','ReserveController@edit');
-Route::post('reserves/edit','ReserveController@update');
-Route::get('reserves/delete','ReserveController@delete');
 
+Route::group(['prefix' => 'reserves','middleware'=>'auth:user'], function() {
+   Route::get('index','ReserveController@index');
+   Route::post('create','ReserveController@create');
+   Route::get('edit','ReserveController@edit');
+   Route::post('edit','ReserveController@update');
+   Route::get('delete','ReserveController@delete');
+});
 
-Auth::routes();
+/*
+|--------------------------------------------------------------------------
+| 3) Admin 認証不要
+|--------------------------------------------------------------------------
+*/
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('login',     'Admin\LoginController@showLoginForm')->name('admin.login');
+    Route::post('login',    'Admin\LoginController@login');
+});
 
 

@@ -26,7 +26,7 @@ class ReserveController extends Controller
     
       
       $reserve->fill($form);
-      
+      $reserve->user_id = Auth::user()->id;
       
       $reserve->save();
        
@@ -56,6 +56,6 @@ class ReserveController extends Controller
      $reserve = Reserve::find($request->id);
       // 削除する
       $reserve->delete();
-      return redirect('/');
+      return redirect('home');
   }
 }

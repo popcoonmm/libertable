@@ -11,7 +11,7 @@ class MenuController extends Controller
    
    public function home() 
    {
-       return view('home.home');
+       return view('home');
    }
     
     public function index(Request $request)

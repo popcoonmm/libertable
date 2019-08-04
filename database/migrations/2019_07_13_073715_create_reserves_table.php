@@ -20,6 +20,9 @@ class CreateReservesTable extends Migration
             $table->integer('quantity')->nullable(); //個数
             $table->integer('menu_id')->unsigned(); //商品番号
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
+            
+            $table->integer('user_id')->unsigned(); //購入者
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('price')->nullable();
             $table->string('description')->nullable();
             
