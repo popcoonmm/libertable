@@ -1,6 +1,3 @@
-@extends('layouts.house')
-@section('title', 'MENU HOUSE1')
-@section('content')
   <header>
       <div class="container">
            <a href='/' class="home">CAKE HOUSE</a>
@@ -11,6 +8,10 @@
   <h1 class="header-top" >MENU</h1>
      <a href='reserves/index' class="reservation">予約リストへ</a>
   </header>
+@extends('layouts.house')
+@section('title', 'MENU HOUSE1')
+@section('content')
+
   
 	<div class="row">
 @foreach($menus as $menu)
@@ -64,5 +65,7 @@
               </div>
             </div>
          </div>
-   
+<header>
+  
+</header>
 @endsection

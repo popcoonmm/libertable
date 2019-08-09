@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-html,
 body {
   margin: auto;
   padding: 0;
   width: 100%;
   height: 100%;
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-  background-image: url(/images/storn.jpg?5f02c2d600c14b28f74e9ebb122216c9);
+  background-image: url(/images/storn.jpg?afd1a6583665da265f82647ef2dc4fc8);
+  background-size: cover;
 }
 
 header {
@@ -15,10 +15,6 @@ header {
   width: 100%;
   z-index: 100000;
   background: rgba(245, 245, 245, 0.5);
-}
-
-.row {
-  margin-top: 180px;
 }
 
 a {
@@ -30,7 +26,7 @@ a {
 }
 
 .top-wrapper {
-  background-image: url(/images/storn.jpg?5f02c2d600c14b28f74e9ebb122216c9);
+  background-image: url(/images/storn.jpg?afd1a6583665da265f82647ef2dc4fc8);
   background-size: 100% 100%;
   height: 100vh;
   color: black;

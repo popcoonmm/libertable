@@ -1,11 +1,11 @@
-html, body{
+body{
     margin: auto;      
     padding: 0;        
     width:100%;
     height:100%;
     font-family: "Hiragino Kaku Gothic ProN", sans-serif;
    background-image: url('../storage/public/app/storn.jpg');
-   
+   background-size: cover;
 }
 header {
     position: fixed;
@@ -13,9 +13,6 @@ header {
     z-index: 100000;
     background: rgba(245,245,245,0.5);
 
-}
-.row {
-  margin-top:180px;
 }
 
 a {

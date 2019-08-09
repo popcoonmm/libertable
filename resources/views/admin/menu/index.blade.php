@@ -6,6 +6,7 @@
          <div class="row">
             <div class="col-md-8 mx-auto">
              <h1>Newmenu</h1>
+              <a href='menu/create'class="">MENU CREATE</a>
       <div class="container">
         <div class="row">
           <p>商品検索</p>

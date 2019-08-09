@@ -1,5 +1,56 @@
-.top-ground {
-  background-color: #55acee;
-  color: #239b76;
+
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background-image: url(/images/storn.jpg?afd1a6583665da265f82647ef2dc4fc8);
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 100000;
+  background: rgba(245, 245, 245, 0.5);
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+.btn-secondary {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  margin: 100px;
+}
+
+.header-top {
+  font-family: Pacifico, sans-serif;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  background: linear-gradient(to right, #4364f7, #6fb1fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  max-width: 70vw;
+}
+
+.menu-image {
+  width: 75%;
+  display: inline-block;
+  margin: auto;
+}
+
+.menu-image img {
+  width: 100%;
+}
+row {
+    padding-bottom: 10vw;
 }
 

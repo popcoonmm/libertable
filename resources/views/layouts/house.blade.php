@@ -12,13 +12,10 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/home.css') }}" rel="stylesheet">
-        <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
           <title>@yield('title')</title>
     </head>
       <body>
-        <main class="py-4">
                 @yield('content')
-        </main>
       </body>
 </html>

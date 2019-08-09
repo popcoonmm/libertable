@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Reserve;
 use Storage;
+use Illuminate\Support\Facades\Auth;
+
 class ReserveController extends Controller
 {
      public function index()
@@ -18,6 +20,7 @@ class ReserveController extends Controller
     {
       
       $this->validate($request,Reserve::$rules);
+      
       $reserve = new Reserve;
       $form = $request->all();
       
