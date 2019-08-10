@@ -55,37 +55,28 @@
                     <!--<input type="submit"class="btn-secondary" value="予約する">-->
                       <!--合計金額を確認-->
                       <!-- Button trigger modal -->
-　　　　　　　　<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">予約する
-　　　　　　　　</button>
+　　　　　　　　<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">予約する</button>
 
 　　　　　<!-- Modal -->
-<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="margin-top: 10vh;">
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="margin-top: 5vh;">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">予約</h5>
+        <h2 class="modal-title" id="exampleModalScrollableTitle">予約</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+         
         </button>
       </div>
       <div class="modal-body">
-           <thead>
-                           <tr>
-                                <th width="15%">商品名</th>
-                                <th width="15%">単価</th>
-                                <th width="15%">注文数</th>
-                                <th width="15%">小計</th>
-                                <th width="10%">商品画像</th>
-                            </tr>
-                        </thead>
+         
+               
          <!--  {{ $sum_price = 0 }} -->
         @foreach($reserves as $reserve)
       
                         <div class="row">
+                            
                                     <span>{{ $reserve->menu->item }}</span>
-                                    <span>{{ $reserve->menu->price }}円</span>
                                     <span>{{ $reserve->quantity }}個</span>
-                                     <span>{{ $reserve->menu->price * $reserve->quantity  }}円</span>
                                     <span><img src="{{ $reserve->menu->image_path }}" width="50" height="50"></span>
                         </div>
                     <hr>
@@ -96,7 +87,7 @@
                   
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">予約する</button>
+        <button type="button" class="btn">予約する</button>
       </div>
     </div>
   </div>
