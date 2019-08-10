@@ -49,7 +49,7 @@
           </tbody>
           </table>
           <div class="container-fluid col-md-6 mx-auto col-10">
-                  
+              
            <input type="hidden" name="menu_id" value="{{ $reserve->menu->id }}">
                    
                     <!--<input type="submit"class="btn-secondary" value="予約する">-->
