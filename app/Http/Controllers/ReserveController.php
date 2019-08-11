@@ -13,7 +13,7 @@ class ReserveController extends Controller
       $reserves = Reserve::all();
       
         return view('reserves.index',['reserves' => $reserves]);
-        dd($reserves);
+        // dd($reserves);
     }
     
      public function create(Request $request)
