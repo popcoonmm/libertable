@@ -54,6 +54,10 @@ return [
             'driver' => 'session', //追加
             'provider' => 'admins', //追加
         ],
+        'providers' => [ //追加
+            'driver' => 'session', //追加
+            'provider' => 'providers', //追加
+        ],
     ],
 
     /*
@@ -73,7 +77,7 @@ return [
     |
     */
 
-    'providers' => [
+    
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
@@ -83,7 +87,11 @@ return [
             'driver' => 'eloquent', //追加
             'model' => App\Admin::class, //追加
         ],
-    ],
+   
+       'providers' => [ //追加
+            'driver' => 'eloquent', //追加
+            'model' => App\Providers::class, //追加
+        ],
 
     /*
     |--------------------------------------------------------------------------
@@ -108,6 +116,11 @@ return [
         ],
           'admins' => [ //追加
             'provider' => 'admins', //追加
+            'table' => 'password_resets', //追加
+            'expire' => 60, //追加
+        ],
+        'providers' => [ //追加
+            'provider' => 'providers', //追加
             'table' => 'password_resets', //追加
             'expire' => 60, //追加
         ],

@@ -1,4 +1,4 @@
-@extends('layouts.adminapp')
+@extends('layouts.app_admin')
  <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

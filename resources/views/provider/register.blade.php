@@ -1,4 +1,4 @@
-@extends('layouts.app_admin')
+@extends('layouts.app_provider')
 
 @section('content')
 <style>body{background-color: skyblue;}</style>
