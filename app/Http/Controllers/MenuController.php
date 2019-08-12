@@ -23,7 +23,7 @@ class MenuController extends Controller
         
         
             $menus= Menu::all()->sortBy('updated_at');
-       
+
          return view('menu.index', [ 'menus' => $menus,'cond_item' => $cond_item]);
       
     }

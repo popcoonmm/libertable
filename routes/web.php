@@ -46,6 +46,8 @@ Route::group(['prefix' => 'reserves','middleware'=>'auth:user'], function() {
 Route::group(['prefix' => 'admin'], function() {
     Route::get('login',     'Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('login',    'Admin\LoginController@login');
+     Route::get('register',     'Admin\RegisterController@register');
+    Route::post('register',    'Admin\RegisterController@register');
 });
 
 

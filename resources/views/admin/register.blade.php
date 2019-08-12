@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('店舗登録') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('admin/register') }}">
                         @csrf
 
                         <div class="form-group row">

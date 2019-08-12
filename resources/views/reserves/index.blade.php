@@ -73,12 +73,10 @@
          <!--  {{ $sum_price = 0 }} -->
         @foreach($reserves as $reserve)
       
-                        <div class="row">
+                        <div class="modalrow">
                             
                                     <span>{{ $reserve->menu->item }}</span>
                                     <span>{{ $reserve->quantity }}個</span>
-                                    <span><img src="{{ $reserve->menu->image_path }}" width="50" height="50"></span>
-                        </div>
                     <hr>
                      <!--  {{ $sum_price +=  $reserve->menu->price * $reserve->quantity  }} -->
                     
